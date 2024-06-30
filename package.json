@@ -7,20 +7,20 @@
     "db-seed": "prisma db seed",
     "db-reset": "prisma migrate dev reset",
     "dx:next": "run-s migrate-dev db-seed && next dev",
-    "dx:prisma-studio": "pnpm prisma-studio",
+    "dx:prisma-studio": "npm run prisma-studio",
     "dx": "run-p dx:* --print-label",
-    "dev": "pnpm dx:next",
+    "dev": "npm run dx:next",
     "prebuild": "run-s generate migrate",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --cache --ext \".js,.ts,.tsx\" src",
-    "lint-fix": "pnpm lint --fix",
+    "lint-fix": "npm run lint --fix",
     "migrate-dev": "prisma migrate dev",
     "migrate": "prisma migrate deploy",
     "test-unit": "vitest",
     "test-e2e": "playwright test",
     "test-start": "run-s test-unit test-e2e",
-    "postinstall": "pnpm generate"
+    "postinstall": "npm run generate"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
