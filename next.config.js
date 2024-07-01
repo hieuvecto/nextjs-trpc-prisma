@@ -32,4 +32,8 @@ module.exports = getConfig({
   typescript: {
     ignoreBuildErrors: true,
   },
+  images: {
+    // Add domains to the list of allowed domains (just for dummy data)
+    domains: ['images.unsplash.com', 'plus.unsplash.com'],
+  },
 });

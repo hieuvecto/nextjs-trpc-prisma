@@ -2,8 +2,8 @@ import type { NextPage } from 'next';
 import type { AppType, AppProps } from 'next/app';
 import type { ReactElement, ReactNode } from 'react';
 
-import { DefaultLayout } from '~/components/DefaultLayout';
-import { trpc } from '~/utils/trpc';
+import { DefaultLayout } from '~/components/layouts/DefaultLayout';
+import { trpc } from '~/utils/trpc.utils';
 import '~/styles/globals.css';
 
 export type NextPageWithLayout<

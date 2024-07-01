@@ -36,7 +36,7 @@ export const restaurantRouter = router({
     )
     .query(async ({ input }) => {
       const { limit, offset } = input;
-      
+
       const items = await prisma.restaurant.findMany({
         select: defaultRestaurantSelect,
         take: limit + 1,
@@ -51,7 +51,7 @@ export const restaurantRouter = router({
         items,
       };
     }),
-  
+
   byId: publicProcedure
     .input(
       z.object({
@@ -72,8 +72,8 @@ export const restaurantRouter = router({
       }
       return item;
     }),
-  
-  markFavorite: publicProcedure
+
+  toggleFavorite: publicProcedure
     .input(
       z.object({
         id: z.string(),
