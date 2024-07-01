@@ -45,3 +45,15 @@ export const STORE_CATEGORY_TEXTS = {
   [StoreCategory.IZAKAYA]: '이자카야·바',
   [StoreCategory.OTHER]: '기타 일본 음식',
 };
+
+export const CITY_TEXTS = {
+  kobe: '고베',
+  yokohama: '요코하마',
+  hiroshima: '히로시마',
+  saporo: '삿포로',
+  osaka: '오사카',
+  fukuoka: '후쿠오카',
+  nagoya: '나고야',
+  kyoto: '교토',
+  tokyo: '도쿄',
+};

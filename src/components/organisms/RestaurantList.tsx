@@ -26,11 +26,13 @@ const RestaurantList: FunctionComponent<RestaurantListProps> = ({ items }) => {
 
   return (
     <div className="grid md:grid-cols-4 gap-4">
-      {items.map((item) => (
+      {items.map((item, index) => (
         <RestaurantSummary
           key={item.id}
           item={item}
           toggleRestaurantFavoriteHandler={toggleRestaurantFavoriteHandler}
+          isFeaturedRestaurant={index === 0}
+          appendClassName={index === 0 ? 'md:col-span-2' : ''}
         />
       ))}
     </div>

@@ -12,7 +12,7 @@ export type HomePageProps = {
 const HomePage: FunctionComponent<HomePageProps> = ({ restaurantItems }) => (
   <div>
     <div className="p-4 container mx-auto">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-8">
         <SearchBar />
         <RestaurantList items={restaurantItems} />
       </div>
