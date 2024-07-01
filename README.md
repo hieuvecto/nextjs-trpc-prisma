@@ -21,8 +21,15 @@ npm run dx
 # In another times, don't run dx again, just run the next server
 npm run dev
 
-# Visit http://localhost:3000 to see the site
+# Visit http://localhost:3000 to see the site (I have applied server side rendering to the site)
 ```
+
+## Demo
+
+- Visit https://nextjs-trpc-prisma-seven.vercel.app/ to see the demo
+- Notice: The demo is slow because it is hosted on a free plan on Vercel
+
+- Demo video: https://www.loom.com/share/3111e43a764140e8a43edb3d77545794
 
 ---
 
