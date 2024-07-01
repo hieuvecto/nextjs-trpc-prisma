@@ -1,3 +1,33 @@
+# Next.js + Prisma + tRPC dummy site
+
+Dummy site
+
+## Prerequisites
+
+- nodejs - ^20.15.0
+- docker - ^26.1.4
+
+## Local instructions:
+
+```sh
+# Install dependencies
+npm i
+# Run the database
+docker-compose up -d
+
+# Migrate the database, run the seed and start the next server (all in one command, following the instructions for migrations)
+npm run dx
+
+# In another times, don't run dx again, just run the next server
+npm run dev
+
+# Visit http://localhost:3000 to see the site
+```
+
+---
+
+Original README.md content:
+
 # Prisma + tRPC
 
 ## Features

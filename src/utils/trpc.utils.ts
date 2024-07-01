@@ -1,12 +1,13 @@
 import { unstable_httpBatchStreamLink, loggerLink } from '@trpc/client';
 import { createTRPCNext } from '@trpc/next';
-
+import { ssrPrepass } from '@trpc/next/ssrPrepass';
 import type { inferRouterInputs, inferRouterOutputs } from '@trpc/server';
 import type { NextPageContext } from 'next';
 // ℹ️ Type-only import:
 // https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-8.html#type-only-imports-and-export
 import type { AppRouter } from '~/server/routers/_app';
 import { transformer } from './transformer.utils';
+import { httpBatchLink } from '@trpc/client';
 
 function getBaseUrl() {
   if (typeof window !== 'undefined') {
@@ -51,6 +52,18 @@ export const trpc = createTRPCNext<AppRouter, SSRContext>({
      * If you want to use SSR, you need to use the server's full URL
      * @link https://trpc.io/docs/v11/ssr
      */
+    if (typeof window !== 'undefined') {
+      // during client requests
+      return {
+        links: [
+          httpBatchLink({
+            url: '/api/trpc',
+            transformer,
+          }),
+        ],
+      };
+    }
+
     return {
       /**
        * @link https://trpc.io/docs/v11/client/links
@@ -97,7 +110,8 @@ export const trpc = createTRPCNext<AppRouter, SSRContext>({
   /**
    * @link https://trpc.io/docs/v11/ssr
    */
-  ssr: false,
+  ssr: true,
+  ssrPrepass,
   /**
    * @link https://trpc.io/docs/v11/data-transformers
    */
